@@ -14,9 +14,6 @@ jobs:
         run: echo "tag=$(echo ${{ github.ref }} | sed 's/refs\/tags\///')" >> $GITHUB_OUTPUT
       - name: Create GH-Release
         uses: softprops/action-gh-release@v1
-        with:
-          body_path: ./body-file.txt
-          fail_on_unmatched_files: true
 
   build:
     needs: make-release
